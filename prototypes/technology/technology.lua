@@ -22,8 +22,8 @@ technologies['demo-military-equipment'].unit.count = 15
 technologies['demo-munitions-upgrade'].unit.count = 15
 technologies['demo-steel-furnace'].unit.count = 15
 technologies['demo-logistics'].unit.count = 7
-technologies['demo-gates'].unit.count = 7
 technologies['demo-productivity-1'].unit.count_formula = '25*L'
+technologies['demo-gates'].unit.count = 7
 technologies['demo-shooting-speed-1'].unit.count_formula = '38*L'
 technologies['demo-shooting-speed-4'].unit.count_formula = '38*L'
 
