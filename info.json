@@ -1,11 +1,11 @@
 {
     "name": "SuperCheapMode",
-    "version": "0.18.34",
+    "version": "1.0.0",
     "title": "Super-Cheap Mode",
     "author": "Martin Jurča",
     "contact": "mjurca@centrum.cz",
-    "homepage": "",
-    "factorio_version": "0.18",
-    "dependencies": ["base >= 0.18.34"],
+    "homepage": "https://github.com/jurca/factorio-super-cheap-mode",
+    "factorio_version": "1.0",
+    "dependencies": ["base >= 1.0.0"],
     "description": "This mod changes the normal prices of recipes and technologies to cheaper ones, allowing for a much faster gameplayer and expansion. Designed for a quick factorio gaming session."
 }
