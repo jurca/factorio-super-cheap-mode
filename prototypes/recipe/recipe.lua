@@ -52,10 +52,16 @@ recipes['uranium-fuel-cell'].ingredients[1][2] = 2
 recipes['uranium-fuel-cell'].result_count = 20
 recipes['heat-exchanger'].ingredients[1][2] = 1
 recipes['heat-exchanger'].ingredients[2][2] = 10
-recipes['heat-exchanger'].ingredients[3][2] = 1
+if( recipes['heat-exchanger'].ingredients[3] ~= nil )
+then
+  recipes['heat-exchanger'].ingredients[3][2] = 1
+end
 recipes['heat-pipe'].ingredients[1][2] = 1
 recipes['heat-pipe'].ingredients[2][2] = 2
-recipes['steam-turbine'].ingredients[1][2] = 10
-recipes['steam-turbine'].ingredients[2][2] = 10
-recipes['steam-turbine'].ingredients[3][2] = 4
+if( recipes['steam-turbine'].ingredients ~= nil )
+then
+  recipes['steam-turbine'].ingredients[1][2] = 10
+  recipes['steam-turbine'].ingredients[2][2] = 10
+  recipes['steam-turbine'].ingredients[3][2] = 4
+end
 -- End of nuclear tweaks
