@@ -18,28 +18,8 @@ end
 
 -- Tweaks
 
--- https://github.com/wube/factorio-data/blob/master/base/prototypes/recipe/ammo.lua
-
--- https://github.com/wube/factorio-data/blob/master/base/prototypes/recipe/capsule.lua
-
--- https://github.com/wube/factorio-data/blob/master/base/prototypes/recipe/demo-furnace-recipe.lua
-
--- https://github.com/wube/factorio-data/blob/master/base/prototypes/recipe/demo-recipe.lua
-
--- https://github.com/wube/factorio-data/blob/master/base/prototypes/recipe/demo-turret.lua
-
--- https://github.com/wube/factorio-data/blob/master/base/prototypes/recipe/equipment.lua
-
--- https://github.com/wube/factorio-data/blob/master/base/prototypes/recipe/fluid-recipe.lua
-
--- https://github.com/wube/factorio-data/blob/master/base/prototypes/recipe/furnace-recipe.lua
+-- https://github.com/wube/factorio-data/blob/master/base/prototypes/recipe.lua
 recipes['steel-plate'].normal.energy_required = 6
-
--- https://github.com/wube/factorio-data/blob/master/base/prototypes/recipe/inserter.lua
-
--- https://github.com/wube/factorio-data/blob/master/base/prototypes/recipe/module.lua
-
--- https://github.com/wube/factorio-data/blob/master/base/prototypes/recipe/recipe.lua
 -- Science packs, yay! These are "cheap" individually, however, large
 -- quantities of them are required.
 recipes['chemical-science-pack'].result_count = 4
@@ -79,5 +59,3 @@ recipes['steam-turbine'].ingredients[1][2] = 10
 recipes['steam-turbine'].ingredients[2][2] = 10
 recipes['steam-turbine'].ingredients[3][2] = 4
 -- End of nuclear tweaks
-
--- https://github.com/wube/factorio-data/blob/master/base/prototypes/recipe/turret.lua
