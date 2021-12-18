@@ -1,6 +1,6 @@
 local recipes = data.raw.recipe
 
--- General recipe const tweaks
+-- General recipe cost tweaks
 
 local cost_factor =  0.25
 
@@ -29,7 +29,7 @@ recipes['production-science-pack'].ingredients[3][2] = 10
 recipes['utility-science-pack'].result_count = 6
 -- science packs reconfiguration ends here
 recipes['rocket-control-unit'].result_count = 2
--- Nuclear! This needs massive changes for it to make sense in cheap mode
+-- Nuclear! This needs massive changes for it to make sense in super cheap mode
 recipes['nuclear-reactor'].ingredients[1][2] = 100
 recipes['nuclear-reactor'].ingredients[2][2] = 100
 recipes['nuclear-reactor'].ingredients[3][2] = 100
