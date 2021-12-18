@@ -34,10 +34,10 @@ local function set_result_count(recipe_name, result_count)
   local recipe = recipes[recipe_name]
   if( recipe )
   then
-    if( recipe.normal and recipe.normal.result_count )
+    if( recipe.normal )
     then
       recipe.normal.result_count = result_count
-    elseif( recipe.result_count )
+    else
       recipe.result_count = result_count
     end
   end
