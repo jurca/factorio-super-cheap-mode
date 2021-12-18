@@ -4,6 +4,45 @@ local recipes = data.raw.recipe
 
 local cost_factor =  0.25
 
+local function set_ingredient_amount(recipe_name, ingredient_index, amount)
+  local recipe = recipes[recipe_name]
+  if( recipe )
+  then
+    local ingredient = nil
+    if( recipe.normal and recipe.normal.ingredients )
+    then
+      ingredient = recipe.normal.ingredients[ingredient_index]
+    elseif( recipe.ingredients )
+    then
+      ingredient = recipe.ingredients[ingredient_index]
+    end
+
+    if( ingredient )
+    then
+      if( ingredient.amount )
+      then
+        ingredient.amount = amount
+      elseif( ingredient[2] )
+      then
+        ingredient[2] = amount
+      end
+    end
+  end
+end
+
+local function set_result_count(recipe_name, result_count)
+  local recipe = recipes[recipe_name]
+  if( recipe )
+  then
+    if( recipe.normal and recipe.normal.result_count )
+    then
+      recipe.normal.result_count = result_count
+    elseif( recipe.result_count )
+      recipe.result_count = result_count
+    end
+  end
+end
+
 for _,recipe in pairs(recipes) do
   local ingredients = recipe.normal and recipe.normal.ingredients or recipe.ingredients
   for _,ingredient in ipairs(ingredients) do
@@ -75,43 +114,3 @@ set_ingredient_amount('steam-turbine', 1, 10)
 set_ingredient_amount('steam-turbine', 2, 10)
 set_ingredient_amount('steam-turbine', 3, 4)
 -- End of nuclear tweaks
-
-local function set_ingredient_amount(recipe_name, ingredient_index, amount)
-  local recipe = recipes[recipe_name]
-  if( recipe )
-  then
-    local ingredient = nil
-    if( recipe.normal and recipe.normal.ingredients )
-    then
-      ingredient = recipe.normal.ingredients[ingredient_index]
-    elseif( recipe.ingredients )
-    then
-      ingredient = recipe.ingredients[ingredient_index]
-    end
-
-    if( ingredient )
-    then
-      if( ingredient.amount )
-      then
-        ingredient.amount = amount
-      elseif( ingredient[2] )
-      then
-        ingredient[2] = amount
-      end
-    end
-  end
-end
-
-local function set_result_count(recipe_name, result_count)
-  local recipe = recipes[recipe_name]
-  if( recipe )
-  then
-    if( recipe.normal and recipe.normal.result_count )
-    then
-      recipe.normal.result_count = result_count
-    elseif( recipe.result_count )
-    then
-      recipe.result_count = result_count
-    end
-  end
-end
