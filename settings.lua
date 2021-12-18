@@ -4,5 +4,11 @@ data:extend({
     name = "SuperCheapMode-override-infinite-research",
     setting_type = "startup",
     default_value = true
+  },
+  {
+    type = "bool-setting",
+    name = "SuperCheapMode-modify-barrel-fill-empty-recipes",
+    setting_type = "startup",
+    default_value = false
   }
 })
