@@ -101,8 +101,14 @@ local enrichment_recipe = recipes['kovarex-enrichment-process']
 if( enrichment_recipe and enrichment_recipe.results )
 then
   enrichment_recipe.energy_required = 12
-  enrichment_recipe.results[1][2] = 6
-  enrichment_recipe.results[2][2] = 1
+  if( enrichment_recipe.results[1] )
+  then
+    enrichment_recipe.results[1][2] = 6
+  end
+  if( enrichment_recipe.results[2] )
+  then
+    enrichment_recipe.results[2][2] = 1
+  end
 end
 if( recipes['nuclear-fuel'] )
 then
