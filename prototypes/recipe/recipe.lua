@@ -9,10 +9,7 @@ local function set_ingredient_amount(recipe_name, ingredient_index, amount)
   if( recipe )
   then
     local ingredient = nil
-    if( recipe.normal and recipe.normal.ingredients )
-    then
-      ingredient = recipe.normal.ingredients[ingredient_index]
-    elseif( recipe.ingredients )
+    if( recipe.ingredients )
     then
       ingredient = recipe.ingredients[ingredient_index]
     end
@@ -34,11 +31,9 @@ local function set_result_count(recipe_name, result_count)
   local recipe = recipes[recipe_name]
   if( recipe )
   then
-    if( recipe.normal )
+    if( recipe.results and recipe.results[1] )
     then
-      recipe.normal.result_count = result_count
-    else
-      recipe.result_count = result_count
+      recipe.results[1].amount = result_count
     end
   end
 end
@@ -53,13 +48,16 @@ for _,recipe in pairs(recipes) do
 
   if( modify_recipe )
   then
-    local ingredients = recipe.normal and recipe.normal.ingredients or recipe.ingredients
-    for _,ingredient in ipairs(ingredients) do
-      if( ingredient.amount ~= nil )
-      then
-        ingredient.amount = math.max(math.floor(ingredient.amount * cost_factor), 1)
-      else
-        ingredient[2] = math.max(math.floor(ingredient[2] * cost_factor), 1)
+    local ingredients = recipe.ingredients
+    if( ingredients ~= nil )
+    then
+      for _,ingredient in ipairs(ingredients) do
+        if( ingredient.amount ~= nil )
+        then
+          ingredient.amount = math.max(math.floor(ingredient.amount * cost_factor), 1)
+        else
+          ingredient[2] = math.max(math.floor(ingredient[2] * cost_factor), 1)
+        end
       end
     end
   end
@@ -68,9 +66,9 @@ end
 -- Tweaks
 
 -- https://github.com/wube/factorio-data/blob/master/base/prototypes/recipe.lua
-if( recipes['steel-plate'] and recipes['steel-plate'].normal )
+if( recipes['steel-plate'] )
 then
-  recipes['steel-plate'].normal.energy_required = 6
+  recipes['steel-plate'].energy_required = 6
 end
 -- Science packs, yay! These are "cheap" individually, however, large
 -- quantities of them are required.
