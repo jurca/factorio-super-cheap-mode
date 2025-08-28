@@ -44,7 +44,11 @@ for _,recipe in pairs(recipes) do
   --   - create_fill_barrel_recipe
   --   - create_empty_barrel_recipe
   local is_barrel_recipe = recipe.subgroup == "fill-barrel" or recipe.subgroup == "empty-barrel"
-  local modify_recipe = modify_barrel_recipes or not is_barrel_recipe
+  
+  -- See https://github.com/jurca/factorio-super-cheap-mode/issues/1 and https://mods.factorio.com/mod/SuperCheapMode/discussion/685174fc80b994abe7124959
+  local is_fluoroketone_recipe = recipe.name == "cryogenic-science-pack" or recipe.name == "fluoroketone-cooling" or recipe.name == "quantum-processor"
+
+  local modify_recipe = not is_fluoroketone_recipe or (modify_barrel_recipes or not is_barrel_recipe)
 
   if( modify_recipe )
   then
